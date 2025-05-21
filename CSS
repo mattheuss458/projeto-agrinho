@@ -1,1 +1,212 @@
-# projeto-agrinho
+/* Importação de fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap');
+
+/* Estilos gerais */
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    /* Imagem de fundo sutil para o body */
+    background-image: url('https://www.transparenttextures.com/patterns/leaves.png'); /* Padrão de folhas */
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+/* Ajustes para o container (se fosse usar, mas o section-content já tem max-width) */
+/* .container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+} */
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(to right, #27ae60, #1abc9c); /* Gradiente verde-azulado */
+    color: #fff;
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 100; /* Garante que o header fique sobre outros elementos */
+}
+
+header h1 {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+    margin-top: 15px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 1.1rem;
+    display: inline-flex; /* Permite alinhar ícone e texto */
+    align-items: center; /* Alinha verticalmente */
+}
+
+nav ul li a:hover {
+    color: #ecf0f1; /* Cor mais clara no hover */
+    transform: translateY(-3px); /* Pequeno efeito de elevação */
+}
+
+nav ul li a i {
+    margin-right: 8px; /* Espaçamento entre o ícone e o texto */
+}
+
+/* Conteúdo principal */
+main {
+    padding: 20px 0;
+}
+
+.section-content {
+    background: rgba(255, 255, 255, 0.95); /* Fundo branco semi-transparente */
+    padding: 30px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    max-width: 900px;
+    border: 1px solid #e0e0e0;
+}
+
+.section-content h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    border-bottom: 3px solid #27ae60; /* Borda verde mais robusta */
+    padding-bottom: 12px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex; /* Para centralizar os ícones e o texto */
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Espaço entre o texto e os ícones no h2 */
+}
+
+.section-content h2 i {
+    color: #27ae60; /* Cor dos ícones nos títulos das seções */
+    font-size: 1.8em; /* Tamanho dos ícones nos títulos */
+}
+
+.section-content p {
+    margin-bottom: 15px;
+    text-align: justify;
+    font-size: 1.05rem;
+}
+
+.impact-grid, .improvement-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px; /* Mais espaço entre os cards */
+    margin-top: 25px;
+}
+
+@media (min-width: 768px) {
+    .impact-grid, .improvement-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.impact-card, .improvement-card {
+    background: #ecf0f1;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição para hover */
+}
+
+.impact-card:hover, .improvement-card:hover {
+    transform: translateY(-5px); /* Efeito de elevação no hover */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.impact-card h3, .improvement-card h3 {
+    color: #34495e;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    margin-top: 0;
+    border-bottom: 1px dashed #aed6f1;
+    padding-bottom: 12px;
+    font-size: 1.5rem;
+    display: flex; /* Para alinhar ícone e texto no h3 */
+    align-items: center;
+    gap: 10px; /* Espaço entre o texto e o ícone no h3 */
+}
+
+.impact-card h3 i {
+    color: #e74c3c; /* Cor para ícones de impacto */
+}
+
+.improvement-card h3 i {
+    color: #27ae60; /* Cor para ícones de melhoria */
+}
+
+.impact-card ul, .improvement-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.impact-card ul li, .improvement-card ul li {
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+    font-size: 1rem;
+}
+
+/* Marcadores de lista customizados com Font Awesome */
+.impact-card ul li::before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f057"; /* Ícone de círculo com "x" para impactos negativos (fa-circle-xmark) */
+    font-weight: 900; /* Para usar a versão solid do Font Awesome */
+    color: #e74c3c;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.improvement-card ul li::before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f058"; /* Ícone de círculo com "check" para melhorias (fa-circle-check) */
+    font-weight: 900;
+    color: #27ae60;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.impact-card p, .improvement-card p {
+    margin: 0;
+    text-align: left;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 25px 0;
+    background: #34495e; /* Azul escuro */
+    color: #fff;
+    margin-top: 40px;
+    box-shadow: 0 -4px 8px rgba(0,0,0,0.3);
+    font-size: 0.9rem;
+}
